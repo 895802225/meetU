@@ -7,14 +7,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 
 @Module({
-  imports: [
-    ZjwModule,
-    ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'public/uploaded'),
-      serveRoot: '/image/user',
-    }),
-    UploadImgModule,
-  ],
+  imports: [ZjwModule, UploadImgModule],
   controllers: [AppController],
   providers: [AppService],
 })

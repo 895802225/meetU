@@ -10,8 +10,8 @@ import { extname, join } from 'path';
       // 用于配置上传，这部分也可以写在路由上
       storage: diskStorage({
         // destination: join(__dirname, '../images'),
-        // destination: join(__dirname, './public/images'),
-        destination: join('./public/uploaded'),
+        destination: join(__dirname, '../images'),
+        // destination: join('./public/uploaded'),
         filename: (_, file, callback) => {
           const fileName = `${_.body.uid + extname(file.originalname)}`;
           return callback(null, fileName);
